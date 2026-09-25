@@ -6,9 +6,9 @@ const dots=[...document.querySelectorAll('.steps a')];
 const images=['./assets/01-inicio.png','./assets/02-detalle.png','./assets/03-proyectos.png'];
 // Un solo conjunto de cámaras para las tres pantallas.
 const cameras=[
-  {orbit:'0deg 75deg 1.5m',target:'0m 0.82m 0m'},
-  {orbit:'-12deg 77deg 0.95m',target:'0m 1.36m 0m'},
-  {orbit:'15deg 78deg 1.05m',target:'0m 0.38m 0m'}
+  {orbit:'0deg 75deg 2.05m',target:'-0.35m 0.82m 0m'},
+  {orbit:'-12deg 77deg 1.25m',target:'0.32m 1.36m 0m'},
+  {orbit:'15deg 78deg 1.3m',target:'-0.35m 0.38m 0m'}
 ];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let active=-1;
