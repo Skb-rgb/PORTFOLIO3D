@@ -8,8 +8,6 @@ const images=['./assets/01-inicio.png','./assets/02-detalle.png','./assets/03-pr
 // distancia; camera-target centra la cabeza, torso o piernas según tu modelo.
 let cameras=[
   {orbit:'0deg 75deg 1.5m',target:'0m 0.82m 0m'},
-  {orbit:'-18deg 68deg 1.9m',target:'0m 0.55m 0m'},
-  {orbit:'20deg 80deg 2.1m',target:'0m -0.65m 0m'}
 ];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let active=-1;
