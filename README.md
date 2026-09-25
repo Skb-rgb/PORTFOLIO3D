@@ -1,4 +1,4 @@
-# Portafolio interactivo — Julián Rodríguez
+
 
 Maqueta de tres pantallas basada en los bocetos. Incluye el `personaje.glb` suministrado y encuadres ajustados a su geometría. La animación integrada se reproduce al cargar y la cámara cambia al hacer scroll.
 
