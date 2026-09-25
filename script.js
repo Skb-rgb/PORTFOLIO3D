@@ -7,7 +7,7 @@ const images=['./assets/01-inicio.png','./assets/02-detalle.png','./assets/03-pr
 // Ajusta estos valores después de cargar el GLB: órbita horizontal, vertical,
 // distancia; camera-target centra la cabeza, torso o piernas según tu modelo.
 let cameras=[
-  {orbit:'0deg 75deg 0.55m',target:'0m 0.2m 0m'},
+  {orbit:'0deg 75deg 1.5m',target:'0m 0.82m 0m'},
   {orbit:'-18deg 68deg 1.9m',target:'0m 0.55m 0m'},
   {orbit:'20deg 80deg 2.1m',target:'0m -0.65m 0m'}
 ];
