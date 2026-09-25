@@ -1,6 +1,6 @@
 # Portafolio interactivo — Julián Rodríguez
 
-Maqueta de tres pantallas basada en los bocetos. Funciona de inmediato con las imágenes de referencia. Al añadir `assets/personaje.glb`, las sustituye automáticamente por el modelo 3D y la cámara cambia al hacer scroll.
+Maqueta de tres pantallas basada en los bocetos. Incluye el `personaje.glb` suministrado y encuadres ajustados a su geometría. La animación integrada se reproduce al cargar y la cámara cambia al hacer scroll.
 
 ## Estructura
 
@@ -10,7 +10,7 @@ Maqueta de tres pantallas basada en los bocetos. Funciona de inmediato con las i
 
 ## Para poner tu modelo
 
-Exporta desde Blender como **glTF Binary (.glb)**, aplica transformaciones y comprueba que la cabeza quede hacia `+Y` y los pies hacia `-Y`. Colócalo en `assets/personaje.glb`. Edita el arreglo `cameras` en `script.js` para ajustar los tres encuadres. Si el personaje tiene animaciones, puedes añadir el atributo `autoplay` al elemento `model-viewer` en `index.html`. Sustituye `julian@example.com` por tu correo real (aparece dos veces).
+El archivo `assets/personaje.glb` ya está incluido. Contiene la animación `rigAction`; si reemplazas el GLB por otra versión, edita el arreglo `cameras` en `script.js` para ajustar los encuadres. Sustituye `julian@example.com` por tu correo real (aparece dos veces).
 
 ## GitHub Pages
 
@@ -18,4 +18,4 @@ Sube **el contenido de esta carpeta** a la raíz de un repositorio. En **Setting
 
 Para probarlo localmente: `python3 -m http.server 8000` y abre `http://localhost:8000`. La prueba con `file://` puede impedir cargar el modelo.
 
-El componente 3D carga desde el CDN oficial de model-viewer; necesita conexión a internet. Mientras no exista el `.glb`, se muestran los bocetos.
+El componente 3D carga desde el CDN oficial de model-viewer; necesita conexión a internet. Si se elimina el `.glb`, se muestran los bocetos. El GLB suministrado usa dos materiales sin imágenes de textura.

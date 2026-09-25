@@ -6,12 +6,11 @@ const dots=[...document.querySelectorAll('.steps a')];
 const images=['./assets/01-inicio.png','./assets/02-detalle.png','./assets/03-proyectos.png'];
 // Ajusta estos valores después de cargar el GLB: órbita horizontal, vertical,
 // distancia; camera-target centra la cabeza, torso o piernas según tu modelo.
-const cameras=[
-  {orbit:'0deg 75deg 1.8m',target:'0m 0m 0m'},
-  {orbit:'-18deg 68deg 1.1m',target:'0m 0.55m 0m'},
-  {orbit:'20deg 80deg 1.2m',target:'0m -0.65m 0m'}
+let cameras=[
+  {orbit:'0deg 75deg 3.5m',target:'0m 0m 0m'},
+  {orbit:'-18deg 68deg 1.9m',target:'0m 0.55m 0m'},
+  {orbit:'20deg 80deg 2.1m',target:'0m -0.65m 0m'}
 ];
-
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let active=-1;
 function update(){
@@ -34,5 +33,16 @@ let ticking=false;
 addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{update();ticking=false});ticking=true}},{passive:true});
 addEventListener('resize',update);
 document.querySelector('#year').textContent=new Date().getFullYear();
-fetch('./assets/personaje.glb',{method:'HEAD'}).then(response=>{if(!response.ok)return;viewer.addEventListener('load',()=>{stage.classList.add('has-model');update()},{once:true});viewer.src='./assets/personaje.glb'}).catch(()=>{});
+fetch('./assets/personaje.glb',{method:'HEAD'}).then(response=>{if(!response.ok)return;viewer.addEventListener('load',()=>{
+  // Encuadres ajustados a personaje.glb. Los controles y accesorios del rig
+  // ensanchan la caja general, por lo que aquí se usa la altura del cuerpo.
+  cameras=[
+    {orbit:'0deg 75deg 2.4m',target:'0m 0.82m 0m'},
+    {orbit:'-12deg 77deg 0.95m',target:'0m 1.36m 0m'},
+    {orbit:'15deg 78deg 1.05m',target:'0m 0.38m 0m'}
+  ];
+  stage.classList.add('has-model');
+  if(reduced){viewer.cameraOrbit=cameras[0].orbit;viewer.cameraTarget=cameras[0].target;}
+  update();
+},{once:true});viewer.src='./assets/personaje.glb'}).catch(()=>{});
 update();
